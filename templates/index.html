@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>My First Webpage</title>
+      <style>
+        body {
+            text-align: center;
+        }
+
+        button {
+            color: aliceblue;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>AudioMl</h1>
+    <form method="POST" action='/predict'>
+        <textarea name='email-content' placeholder="Enter Your Email Body" rows="15" cols="45">{{email}}</textarea>
+        <div><button type="submit">Check spam</button>
+        <a href='/'>Reset text</a>
+        </div>
+    </form>
+{%if predictions==1%}
+<h3 style:"color:red">SPAM</h3>
+{%elif predictions==-1%}
+<h3 style:"color:green">NOT SPAM</h3>
+{%endif%}
+</body>
+</html>
